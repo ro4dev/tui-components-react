@@ -1,0 +1,80 @@
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--ink-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.dialog-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.dialog {
+  background: var(--canvas);
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--rounded-sm);
+  width: 100%;
+  max-width: 480px;
+}
+.dialog__header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--hairline);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.dialog__title { font-weight: 700; color: var(--ink); }
+.dialog__close {
+  background: none;
+  border: none;
+  color: var(--mute);
+  cursor: pointer;
+  font-size: 18px;
+  font-family: inherit;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dialog__close:hover { color: var(--ink); }
+.dialog__body { padding: 20px; color: var(--body); }
+.dialog__footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.dialog-dark {
+  background: var(--surface-dark);
+  border-color: var(--hairline-strong);
+}
+.dialog-dark .dialog__header { border-bottom-color: var(--hairline); }
+.dialog-dark .dialog__title { color: var(--on-dark); }
+.dialog-dark .dialog__body { color: var(--on-dark); }
+.dialog-dark .dialog__footer { border-top-color: var(--hairline); }
+.dialog-dark .dialog__close { color: var(--mute); }
+.dialog-dark .dialog__close:hover { color: var(--on-dark); }
+
+.dialog-btn {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: var(--rounded-sm);
+  cursor: pointer;
+  border: 1px solid var(--hairline-strong);
+  background: var(--canvas);
+  color: var(--body);
+}
+.dialog-btn:hover { background: var(--surface-soft); color: var(--ink); }
+.dialog-btn--primary { background: var(--ink); color: var(--on-dark); border-color: var(--ink); }
+.dialog-btn--primary:hover { opacity: 0.9; }
+.dialog-btn--danger { background: var(--danger); color: var(--on-dark); border-color: var(--danger); }
+.dialog-btn--danger:hover { opacity: 0.9; }
+.dialog-btn--secondary { background: transparent; border-color: var(--hairline-strong); color: var(--body); }

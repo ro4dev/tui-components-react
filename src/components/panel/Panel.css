@@ -1,0 +1,18 @@
+.panel {
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-sm);
+}
+.panel__header {
+  background: var(--surface-soft);
+  padding: 8px 16px;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 1px solid var(--hairline);
+  font-size: 14px;
+}
+.panel__body { padding: 16px; }
+.panel__footer {
+  padding: 8px 16px;
+  border-top: 1px solid var(--hairline);
+  font-size: 14px;
+}

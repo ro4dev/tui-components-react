@@ -1,0 +1,40 @@
+.tui-list-item {
+  padding: 4px 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 14px;
+  color: var(--body);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+.tui-list-item:last-child { border-bottom: none; }
+.definition-term {
+  font-weight: 700;
+  color: var(--ink);
+  padding: 8px 0 0;
+}
+.definition-desc {
+  color: var(--body);
+  padding: 0 0 8px 16px;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 14px;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--surface-soft);
+  color: var(--mute);
+  border-radius: var(--rounded-sm);
+  padding: 2px 8px;
+  font-size: 14px;
+}
+.tag-remove {
+  cursor: pointer;
+  color: var(--stone);
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+}
+.tag-remove:hover { color: var(--ink); }

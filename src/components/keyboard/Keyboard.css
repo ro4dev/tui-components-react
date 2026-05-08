@@ -1,0 +1,15 @@
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  background: var(--surface-card);
+  color: var(--mute);
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-sm);
+  padding: 2px 6px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.kbd--active {
+  background: var(--ink);
+  color: var(--on-dark);
+}

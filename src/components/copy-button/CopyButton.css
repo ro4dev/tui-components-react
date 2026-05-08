@@ -1,0 +1,16 @@
+.copy-button {
+  background: none;
+  border: none;
+  color: var(--mute);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  min-width: 36px;
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--rounded-sm);
+}
+.copy-button:hover { background: var(--surface-soft); color: var(--ink); }
+.copy-button.copied { color: var(--success); }

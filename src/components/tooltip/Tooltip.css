@@ -1,0 +1,23 @@
+.tooltip-trigger {
+  position: relative;
+  display: inline-block;
+}
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background: var(--surface-dark);
+  color: var(--on-dark);
+  font-size: 14px;
+  border-radius: var(--rounded-sm);
+  white-space: nowrap;
+  max-width: 240px;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 100;
+  transition: opacity 0.15s;
+}
+.tooltip-trigger:hover .tooltip,
+.tooltip-trigger:focus-within .tooltip { opacity: 1; }

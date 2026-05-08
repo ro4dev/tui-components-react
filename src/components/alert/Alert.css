@@ -1,0 +1,64 @@
+.alert-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.alert {
+  background: var(--surface-soft);
+  border-radius: var(--rounded-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  position: relative;
+  border-left: 3px solid var(--hairline);
+  animation: tuiFadeIn 0.2s ease-out;
+}
+.alert.removing {
+  animation: tuiFadeOut 0.3s ease-in forwards;
+}
+@keyframes tuiFadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes tuiFadeOut {
+  to { opacity: 0; transform: translateX(100%); height: 0; padding: 0; margin: 0; overflow: hidden; }
+}
+.alert__close {
+  position: absolute;
+  top: var(--spacing-sm);
+  right: var(--spacing-md);
+  background: none;
+  border: none;
+  color: var(--mute);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  padding: 0;
+  line-height: 1;
+}
+.alert__close:hover { color: var(--ink); }
+.alert__icon { margin-right: var(--spacing-xs); }
+.alert__title { font-weight: 700; color: var(--ink); display: block; margin-bottom: var(--spacing-xs); }
+.alert__body { color: var(--body); }
+.alert.alert-info { border-left-color: var(--accent); }
+.alert.alert-info .alert__icon { color: var(--accent); }
+.alert.alert-warning { border-left-color: var(--warning); }
+.alert.alert-warning .alert__icon { color: var(--warning); }
+.alert.alert-danger { border-left-color: var(--danger); }
+.alert.alert-danger .alert__icon { color: var(--danger); }
+.alert.alert-success { border-left-color: var(--success); }
+.alert.alert-success .alert__icon { color: var(--success); }
+
+.alert-inline {
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  display: inline;
+}
+.alert-inline .alert__icon { margin-right: 0; }
+.alert-inline.alert-info,
+.alert-inline.alert-info .alert__icon { color: var(--accent); }
+.alert-inline.alert-warning,
+.alert-inline.alert-warning .alert__icon { color: var(--warning); }
+.alert-inline.alert-danger,
+.alert-inline.alert-danger .alert__icon { color: var(--danger); }
+.alert-inline.alert-success,
+.alert-inline.alert-success .alert__icon { color: var(--success); }

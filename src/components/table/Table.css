@@ -1,0 +1,30 @@
+.tui-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.tui-table th {
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-weight: 700;
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--hairline-strong);
+}
+.tui-table td {
+  padding: 8px 12px;
+  color: var(--body);
+  border-bottom: 1px solid var(--hairline);
+}
+.tui-table tr:nth-child(even) td { background: var(--canvas); }
+.tui-table tr:nth-child(odd) td { background: var(--surface-soft); }
+.tui-table td.numeric { text-align: right; }
+
+.tui-table--compact td, .tui-table--compact th {
+  padding: 4px 12px;
+  font-size: 13px;
+}
+
+.tui-table--bordered th, .tui-table--bordered td {
+  border: 1px solid var(--hairline);
+}

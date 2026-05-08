@@ -1,0 +1,67 @@
+.progress-bar-track {
+  background: var(--surface-card);
+  height: 4px;
+  border-radius: var(--rounded-sm);
+  overflow: hidden;
+  margin-bottom: var(--spacing-lg);
+}
+.progress-bar-fill {
+  height: 4px;
+  background: var(--accent);
+  border-radius: var(--rounded-sm);
+  width: 0%;
+  transition: width 0.3s;
+}
+.spinner {
+  font-size: 16px;
+  color: var(--mute);
+  animation: tuiSpin 1.2s linear infinite;
+  display: inline-block;
+}
+.spinner-label {
+  font-size: 16px;
+  color: var(--mute);
+}
+.spinner-row {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+@keyframes tuiSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: var(--spacing-sm);
+}
+.step {
+  font-size: 14px;
+  color: var(--mute);
+  text-align: center;
+  width: 32px;
+}
+.step.completed { color: var(--success); }
+.step.active { color: var(--ink); }
+.step-connector {
+  color: var(--hairline);
+  font-size: 14px;
+  width: 28px;
+  text-align: center;
+}
+.step-connector.completed { color: var(--success); }
+.step-labels {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.step-label {
+  font-size: 14px;
+  color: var(--mute);
+  width: 32px;
+  text-align: center;
+}
+.step-label-spacer { width: 28px; }

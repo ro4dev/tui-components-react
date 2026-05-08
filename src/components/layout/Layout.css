@@ -1,0 +1,14 @@
+.divider-horizontal {
+  border: none;
+  border-top: 1px solid var(--hairline);
+  margin: var(--spacing-lg) 0;
+}
+.divider-horizontal--strong { border-top-color: var(--hairline-strong); }
+.divider-vertical {
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background: var(--hairline);
+  margin: 0 var(--spacing-sm);
+  vertical-align: middle;
+}

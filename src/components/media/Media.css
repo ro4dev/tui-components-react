@@ -1,0 +1,43 @@
+.media-block {
+  background: var(--surface-soft);
+  border-radius: var(--rounded-sm);
+  overflow: hidden;
+}
+.media-caption {
+  font-size: 14px;
+  color: var(--mute);
+  padding: 8px 0;
+}
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-soft);
+  border-radius: var(--rounded-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.video-embed__overlay {
+  font-size: 24px;
+  color: var(--on-dark);
+  opacity: 0.5;
+}
+.blockquote {
+  border-left: 3px solid var(--hairline-strong);
+  padding: 0 0 0 16px;
+  margin: var(--spacing-lg) 0;
+}
+.blockquote p {
+  color: var(--mute);
+  font-size: 14px;
+  font-style: italic;
+}
+.blockquote cite {
+  display: block;
+  font-size: 14px;
+  color: var(--stone);
+  margin-top: var(--spacing-sm);
+  font-style: normal;
+}
+.blockquote cite::before { content: '— '; }

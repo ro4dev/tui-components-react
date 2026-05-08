@@ -1,0 +1,21 @@
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-xxl);
+}
+.empty-state__icon {
+  font-size: 24px;
+  color: var(--stone);
+  margin-bottom: var(--spacing-md);
+}
+.empty-state__title {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 16px;
+  margin-bottom: var(--spacing-sm);
+}
+.empty-state__desc {
+  color: var(--mute);
+  font-size: 14px;
+  max-width: 320px;
+  margin: 0 auto var(--spacing-lg);
+}
