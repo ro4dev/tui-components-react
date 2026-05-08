@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './Form.css';
 
 interface SearchInputProps {
@@ -36,8 +36,21 @@ interface SelectProps {
 export function Select({ options, value, onChange }: SelectProps) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(value ?? '');
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [open]);
+
   return (
-    <div className="select-wrap">
+    <div className="select-wrap" ref={ref}>
       <button className="select-trigger" onClick={() => setOpen(!open)}>
         <span>{selected || 'Select an option...'}</span>
         <span className="arrow">[▾]</span>
