@@ -19,10 +19,14 @@ const icons: Record<AlertType, string> = {
 
 export function Alert({ type, title, children, onDismiss, inline }: AlertProps) {
   const [removing, setRemoving] = useState(false);
+  const [visible, setVisible] = useState(true);
 
   const handleDismiss = () => {
     setRemoving(true);
-    setTimeout(() => onDismiss?.(), 300);
+    setTimeout(() => {
+      setVisible(false);
+      onDismiss?.();
+    }, 300);
   };
 
   const cls = [
@@ -32,9 +36,11 @@ export function Alert({ type, title, children, onDismiss, inline }: AlertProps) 
     removing ? 'removing' : '',
   ].filter(Boolean).join(' ');
 
+  if (!visible) return null;
+
   return (
     <div className={cls}>
-      {!inline && onDismiss && (
+      {!inline && (
         <button className="alert__close" onClick={handleDismiss}>[×]</button>
       )}
       <span className="alert__icon">{icons[type]}</span>
