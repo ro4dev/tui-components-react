@@ -26,3 +26,23 @@
   --spacing-xxl: 32px;
   --font-mono: 'Berkeley Mono', 'SF Mono', 'Fira Code', monospace;
 }
+
+[data-theme="dark"] {
+  --canvas: #1A1A1A;
+  --surface-soft: #252525;
+  --surface-card: #2A2A2A;
+  --surface-dark: #111111;
+  --ink: #EDEAE3;
+  --body: #C0BDB6;
+  --mute: #8A8580;
+  --stone: #6B6B6B;
+  --ash: #5A5550;
+  --accent: #5A9CFF;
+  --warning: #FFB340;
+  --danger: #FF6B60;
+  --success: #6CDB89;
+  --hairline: #333333;
+  --hairline-strong: #4A4A4A;
+  --on-dark: #1A1A1A;
+  --ink-deep: rgba(255,255,255,0.6);
+}

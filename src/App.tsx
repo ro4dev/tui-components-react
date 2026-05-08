@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import {
   Accordion, AccordionItem,
   Alert,
@@ -26,8 +26,16 @@ import {
 } from './components';
 
 function App() {
+  const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light');
   const [dialogOpen, setDialogOpen] = useState(false);
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((t) => (t === 'light' ? 'dark' : 'light'));
 
   const showToast = useCallback((type: 'info' | 'success' | 'danger' | 'warning', msg: string) => {
     toast(type, msg);
@@ -62,9 +70,26 @@ function App() {
     <div style={{ padding: 'var(--spacing-xxl)', maxWidth: 960, margin: '0 auto' }}>
       <ToastContainer />
 
-      <div style={{ marginBottom: 'var(--spacing-xxl)', paddingBottom: 'var(--spacing-lg)', borderBottom: '1px solid var(--hairline-strong)' }}>
-        <h1 style={{ fontSize: 24, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>TUI Components</h1>
-        <p style={{ color: 'var(--mute)', fontSize: 14 }}>React implementation of the TUI design system</p>
+      <div style={{ marginBottom: 'var(--spacing-xxl)', paddingBottom: 'var(--spacing-lg)', borderBottom: '1px solid var(--hairline-strong)', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+        <div>
+          <h1 style={{ fontSize: 24, fontWeight: 700, color: 'var(--ink)', marginBottom: 4 }}>TUI Components</h1>
+          <p style={{ color: 'var(--mute)', fontSize: 14 }}>React implementation of the TUI design system</p>
+        </div>
+        <button
+          onClick={toggleTheme}
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: 13,
+            padding: '6px 12px',
+            border: '1px solid var(--hairline-strong)',
+            borderRadius: 'var(--rounded-sm)',
+            background: 'var(--surface-soft)',
+            color: 'var(--ink)',
+            cursor: 'pointer',
+          }}
+        >
+          {theme === 'light' ? '[🌙] Dark' : '[☀️] Light'}
+        </button>
       </div>
 
       {/* Accordion */}
