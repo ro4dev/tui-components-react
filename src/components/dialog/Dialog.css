@@ -78,3 +78,6 @@
 .dialog-btn--danger { background: var(--danger); color: var(--on-dark); border-color: var(--danger); }
 .dialog-btn--danger:hover { opacity: 0.9; }
 .dialog-btn--secondary { background: transparent; border-color: var(--hairline-strong); color: var(--body); }
+
+[data-theme="dark"] .dialog-btn--primary { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+[data-theme="dark"] .dialog-btn--danger { background: var(--danger); color: var(--canvas); border-color: var(--danger); }
