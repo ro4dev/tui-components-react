@@ -37,6 +37,20 @@
   gap: var(--spacing-xs);
   align-items: center;
 }
+.pagination__size { margin-right: var(--spacing-sm); }
+.pagination__info { font-size: 13px; color: var(--mute); margin-right: var(--spacing-sm); white-space: nowrap; }
+.page-size-select {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  padding: 4px 6px;
+  border: 1px solid var(--hairline);
+  border-radius: var(--rounded-sm);
+  background: var(--canvas);
+  color: var(--body);
+  cursor: pointer;
+}
+.page-size-select:hover { border-color: var(--hairline-strong); }
+.page-size-select:focus { outline: none; border-color: var(--hairline-strong); }
 .page-btn {
   font-size: 14px;
   padding: 4px 8px;

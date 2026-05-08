@@ -40,9 +40,13 @@ interface PaginationProps {
   current: number;
   total: number;
   onChange?: (page: number) => void;
+  pageSize?: number;
+  pageSizeOptions?: number[];
+  onPageSizeChange?: (size: number) => void;
+  totalItems?: number;
 }
 
-export function Pagination({ current, total, onChange }: PaginationProps) {
+export function Pagination({ current, total, onChange, pageSize, pageSizeOptions, onPageSizeChange, totalItems }: PaginationProps) {
   const pages: ReactNode[] = [];
   const addPage = (n: number, active?: boolean) => {
     pages.push(
@@ -62,6 +66,24 @@ export function Pagination({ current, total, onChange }: PaginationProps) {
 
   return (
     <div className="pagination">
+      {pageSizeOptions && onPageSizeChange && (
+        <div className="pagination__size">
+          <select
+            className="page-size-select"
+            value={pageSize ?? pageSizeOptions[0]}
+            onChange={(e) => onPageSizeChange(Number(e.target.value))}
+          >
+            {pageSizeOptions.map((opt) => (
+              <option key={opt} value={opt}>{opt} / page</option>
+            ))}
+          </select>
+        </div>
+      )}
+      {totalItems != null && pageSize && (
+        <span className="pagination__info">
+          {(current - 1) * pageSize + 1}–{Math.min(current * pageSize, totalItems)} of {totalItems}
+        </span>
+      )}
       <button className="page-btn page-btn--nav" onClick={() => onChange?.(Math.max(1, current - 1))}>[←]</button>
       {pages}
       <button className="page-btn page-btn--nav" onClick={() => onChange?.(Math.min(total, current + 1))}>[→]</button>

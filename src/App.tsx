@@ -292,7 +292,7 @@ function App() {
           <SidebarNav groups={sidebarGroups} />
           <div>
             <div style={{ marginBottom: 'var(--spacing-md)' }}>
-              <Pagination current={page} total={10} onChange={setPage} />
+              <Pagination current={page} total={10} onChange={setPage} pageSize={20} pageSizeOptions={[10, 20, 50]} onPageSizeChange={(s) => console.log('page size:', s)} totalItems={200} />
             </div>
           </div>
         </div>
