@@ -73,7 +73,7 @@
 
 .radio-group { display: flex; flex-direction: column; gap: var(--spacing-sm); }
 .radio-option { display: flex; align-items: center; gap: var(--spacing-sm); cursor: pointer; font-size: 14px; color: var(--body); }
-.radio-option .radio-marker { font-weight: 700; width: 20px; text-align: center; color: var(--mute); white-space: nowrap; }
+.radio-option .radio-marker { font-weight: 700; width: 24px; text-align: center; color: var(--mute); white-space: nowrap; font-size: 16px; line-height: 1; }
 .radio-option.selected .radio-marker { color: var(--ink); }
 
 .dropzone {
