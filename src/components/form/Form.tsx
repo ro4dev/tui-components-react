@@ -69,7 +69,7 @@ interface RadioGroupProps {
 }
 
 export function RadioGroup({ options, value, onChange }: RadioGroupProps) {
-  const [selected, setSelected] = useState(value ?? '');
+  const [selected, setSelected] = useState(value ?? options[0]?.value);
   return (
     <div className="radio-group">
       {options.map((opt) => (
