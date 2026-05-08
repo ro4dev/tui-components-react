@@ -31,7 +31,7 @@
 .toast__close:hover { color: var(--on-dark); }
 .toast--info { border-left-color: var(--accent); }
 .toast--success { border-left-color: var(--success); }
-.toast--error { border-left-color: var(--danger); }
+.toast--danger { border-left-color: var(--danger); }
 .toast--warning { border-left-color: var(--warning); }
 
 .skeleton {
