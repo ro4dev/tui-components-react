@@ -45,7 +45,8 @@
   user-select: none;
 }
 .tab-pills__item--full { flex: 1; text-align: center; }
-.tab-pills__item:hover { color: var(--ink); }
+.tab-pills__item:hover { background: var(--hairline); color: var(--ink); }
 .tab-pills__item--active { background: var(--ink); color: var(--on-dark); }
+.tab-pills__item--active:hover { background: var(--ink); color: var(--on-dark); }
 .pill-panel { display: none; padding: 16px 0; }
 .pill-panel--active { display: block; }
