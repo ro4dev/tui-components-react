@@ -17,7 +17,7 @@ export function SearchInput({ placeholder = 'Type to search...', onSearch }: Sea
         value={value}
         onChange={(e) => { setValue(e.target.value); onSearch?.(e.target.value); }}
         placeholder={placeholder}
-        style={{ paddingLeft: 36 }}
+        style={{ paddingLeft: 44 }}
       />
       {value && (
         <button className="clear-btn" onClick={() => { setValue(''); onSearch?.(''); }}>[×]</button>
