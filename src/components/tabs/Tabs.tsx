@@ -12,12 +12,16 @@ interface TabsProps {
   tabs: Tab[];
   variant?: TabVariant;
   defaultTab?: string;
+  fullWidth?: boolean;
 }
 
-export function Tabs({ tabs, variant = 'strip', defaultTab }: TabsProps) {
+export function Tabs({ tabs, variant = 'strip', defaultTab, fullWidth }: TabsProps) {
   const [active, setActive] = useState(defaultTab ?? tabs[0]?.id);
 
   const isStrip = variant === 'strip';
+  const containerCls = isStrip
+    ? `tab-strip${fullWidth ? ' tab-strip--full' : ''}`
+    : `tab-pills${fullWidth ? ' tab-pills--full' : ''}`;
 
   return (
     <div>
@@ -27,8 +31,8 @@ export function Tabs({ tabs, variant = 'strip', defaultTab }: TabsProps) {
             key={tab.id}
             className={
               isStrip
-                ? `tab-strip__item${active === tab.id ? ' tab-strip__item--active' : ''}`
-                : `tab-pills__item${active === tab.id ? ' tab-pills__item--active' : ''}`
+                ? `tab-strip__item${active === tab.id ? ' tab-strip__item--active' : ''}${fullWidth ? ' tab-strip__item--full' : ''}`
+                : `tab-pills__item${active === tab.id ? ' tab-pills__item--active' : ''}${fullWidth ? ' tab-pills__item--full' : ''}`
             }
             onClick={() => setActive(tab.id)}
           >

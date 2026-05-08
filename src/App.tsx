@@ -348,6 +348,7 @@ function App() {
       <div className="tui-section">
         <div className="tui-section-title">Tabs</div>
         <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+          <div style={{ fontSize: 13, color: 'var(--ink)', marginBottom: 8, fontWeight: 500 }}>Strip</div>
           <Tabs
             tabs={[
               { id: 'files', label: 'Files', content: <p>File explorer: 12,847 files indexed.</p> },
@@ -356,14 +357,40 @@ function App() {
             ]}
           />
         </div>
-        <Tabs
-          variant="pills"
-          tabs={[
-            { id: 'all', label: 'All', content: <p>Showing all 12,847 files.</p> },
-            { id: 'ts', label: 'TypeScript', content: <p>Found 8,421 TypeScript files.</p> },
-            { id: 'js', label: 'JavaScript', content: <p>Found 1,203 JavaScript files.</p> },
-          ]}
-        />
+        <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+          <div style={{ fontSize: 13, color: 'var(--ink)', marginBottom: 8, fontWeight: 500 }}>Strip · Full width</div>
+          <Tabs
+            fullWidth
+            tabs={[
+              { id: 'files', label: 'Files', content: <p>File explorer: 12,847 files indexed.</p> },
+              { id: 'search', label: 'Search', content: <p>Search: Type to find across all files.</p> },
+              { id: 'terminal', label: 'Terminal', content: <p>$ opencode serve — running on :3000</p> },
+            ]}
+          />
+        </div>
+        <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+          <div style={{ fontSize: 13, color: 'var(--ink)', marginBottom: 8, fontWeight: 500 }}>Pills</div>
+          <Tabs
+            variant="pills"
+            tabs={[
+              { id: 'all', label: 'All', content: <p>Showing all 12,847 files.</p> },
+              { id: 'ts', label: 'TypeScript', content: <p>Found 8,421 TypeScript files.</p> },
+              { id: 'js', label: 'JavaScript', content: <p>Found 1,203 JavaScript files.</p> },
+            ]}
+          />
+        </div>
+        <div>
+          <div style={{ fontSize: 13, color: 'var(--ink)', marginBottom: 8, fontWeight: 500 }}>Pills · Full width</div>
+          <Tabs
+            variant="pills"
+            fullWidth
+            tabs={[
+              { id: 'all', label: 'All', content: <p>Showing all 12,847 files.</p> },
+              { id: 'ts', label: 'TypeScript', content: <p>Found 8,421 TypeScript files.</p> },
+              { id: 'js', label: 'JavaScript', content: <p>Found 1,203 JavaScript files.</p> },
+            ]}
+          />
+        </div>
       </div>
 
       <HorizontalDivider />
